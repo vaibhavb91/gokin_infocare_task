@@ -55,7 +55,6 @@ if ($stmt->num_rows > 0) {
 }
 $stmt->close();
 
-// Update the user using prepared statements
 $stmt = $conn->prepare("UPDATE users SET first_name = ?, last_name = ?, phone = ?, email = ?, address = ? WHERE id = ?");
 $stmt->bind_param("sssssi", $firstName, $lastName, $phone, $email, $address, $userId);
 
